@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:id])
+    @category = Category.new(category_params)
     if @category.save
       redirect_to categories_path
     else
@@ -33,11 +33,12 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    redirect_to categories_path
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:care_name)
+    params.require(:category).permit(:cate_name)
   end
 end

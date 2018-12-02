@@ -8,4 +8,4 @@
       %tr
         %td= link_to "#{category.cate_name}", category_blogs_path(category)
         %td= link_to '編集', edit_category_path(category)
-        %td= link_to '削除', category_path(category)
+        %td= link_to '削除', category_path(category), method: :delete, data: {confirm: "削除します"}
