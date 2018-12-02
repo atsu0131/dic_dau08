@@ -1,0 +1,13 @@
+%div= link_to "作成",  new_category_blog_path
+%table
+  %thead
+    %tr
+      %th タイトル
+      %th 内容
+  %tbody
+    - @blogs.each do |blog|
+      %tr
+        %td= blog.title
+        %td= blog.content
+        %td= link_to '編集', edit_category_blog_path(@category, blog)
+        %td= link_to '削除', category_blog_path(@category, blog)
