@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'blogs/index'
-
-  root to:'categories#index'
+  root to:'toppages#index'
 
   resources:categories do
     resources:blogs

@@ -9,5 +9,5 @@
       %tr
         %td= blog.title
         %td= blog.content
-        %td= link_to '編集', edit_category_blog_path(@category, blog)
-        %td= link_to '削除', category_blog_path(@category, blog)
+        %td= link_to '編集', edit_category_blog_path(@category, blog), class: 'btn btn-success'
+        %td= link_to '削除', category_blog_path(@category, blog), method: :delete, data: {confirm: "削除します"}, class: 'btn btn-danger delete'
